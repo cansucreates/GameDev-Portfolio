@@ -1,0 +1,115 @@
+/* Google Fonts - Press Start 2P */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #e2e8f0;
+  background-color: #0f172a;
+  cursor: none; /* Hide default cursor when using custom cursor */
+}
+
+/* Custom cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(74, 222, 128, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.cursor-enlarged {
+  width: 40px;
+  height: 40px;
+  border-color: rgba(74, 222, 128, 0.5);
+  background-color: rgba(74, 222, 128, 0.1);
+  mix-blend-mode: difference;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(74, 222, 128, 0.3);
+  color: #e2e8f0;
+}
+
+/* Global animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+/* Easter egg - hidden pixel character that appears on konami code */
+.easter-egg {
+  position: fixed;
+  bottom: -50px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #4ade80;
+  transition: bottom 0.5s ease;
+  z-index: 1000;
+}
+
+.easter-egg.active {
+  bottom: 20px;
+}
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Media query for mobile devices - disable custom cursor */
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+  
+  .custom-cursor, .cursor-dot {
+    display: none;
+  }
+}

@@ -1,0 +1,52 @@
+.pixel-banner {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><rect width="8" height="8" x="0" y="0" fill="%23292b36" /><rect width="8" height="8" x="8" y="8" fill="%23292b36" /><rect width="8" height="8" x="8" y="0" fill="%23333645" /><rect width="8" height="8" x="0" y="8" fill="%23333645" /></svg>');
+  background-repeat: repeat;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.pixel-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(88, 59, 161, 0.8) 0%, rgba(33, 33, 66, 0.9) 100%);
+  z-index: -1;
+}
+
+.pixel-logo {
+  position: relative;
+  padding-left: 12px;
+}
+
+.pixel-logo::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 70%;
+  background: linear-gradient(to bottom, #5ee7df 0%, #66d36e 100%);
+}
+
+.font-pixel {
+  font-family: 'Press Start 2P', monospace, system-ui;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+}
+
+header.scrolled {
+  background-color: rgba(10, 10, 25, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+header.scrolled .pixel-banner {
+  background-image: none;
+  box-shadow: none;
+}

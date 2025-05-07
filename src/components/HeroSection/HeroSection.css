@@ -1,0 +1,115 @@
+.hero-section {
+  position: relative;
+  background-color: #0f172a;
+  padding-top: 80px; /* Space for header */
+}
+
+.pixel-background {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect width="16" height="16" x="0" y="0" fill="%230f172a" /><rect width="16" height="16" x="16" y="16" fill="%230f172a" /><rect width="16" height="16" x="16" y="0" fill="%2313203a" /><rect width="16" height="16" x="0" y="16" fill="%2313203a" /></svg>');
+  background-repeat: repeat;
+  opacity: 0.3;
+}
+
+.pixel-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.7) 70%, rgba(15, 23, 42, 0.9) 100%);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+.buttons-container {
+  transition: opacity 0.5s ease;
+}
+
+.buttons-container.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.buttons-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: 0.3s;
+}
+
+.scroll-down-button {
+  transition: all 0.3s ease;
+}
+
+.scroll-down-button:hover {
+  color: #4ade80;
+  transform: translateY(5px);
+}
+
+/* Game elements */
+.game-element {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: float 4s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.coin {
+  background-color: gold;
+  border-radius: 50%;
+  box-shadow: 0 0 10px gold;
+  top: 30%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.potion {
+  background-color: #ff5e5e;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #ff5e5e;
+  top: 60%;
+  left: 80%;
+  animation-delay: 1s;
+}
+
+.star {
+  background-color: #5ebaff;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  box-shadow: 0 0 10px #5ebaff;
+  top: 25%;
+  left: 75%;
+  animation-delay: 2s;
+}
+
+.chest {
+  background-color: #c87137;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #c87137;
+  top: 70%;
+  left: 15%;
+  animation-delay: 1.5s;
+}

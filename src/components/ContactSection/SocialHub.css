@@ -1,0 +1,149 @@
+/* Base styles remain the same */
+.social-hub {
+  background-color: #1e293b;
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 
+    rgba(0, 0, 0, 0.2) 0px 4px 12px,
+    inset -2px -2px 0 rgba(0, 0, 0, 0.1),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.social-hub::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #818cf8, #c084fc);
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-item:hover {
+  transform: scale(1.03);
+}
+
+.social-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.social-item:hover::before {
+  transform: translateY(0);
+}
+
+.social-icon {
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.social-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0.9);
+  opacity: 0.9;
+}
+
+.social-name {
+  font-family: 'Press Start 2P', monospace, system-ui;
+  font-size: 0.6rem;
+  position: relative;
+  z-index: 2;
+  opacity: 0.9;
+}
+
+/* Platform Colors */
+.github {
+  background-color: rgba(235, 142, 236, 0.1);
+  color: #cb57aa;
+}
+
+.linkedin {
+  background-color: rgba(0, 181, 151, 0.1);
+  color: #3edfe5;
+}
+
+.unity {
+  background-color: rgba(0, 180, 255, 0.1);
+  color: #00b4ff;
+}
+
+.itch {
+  background-color: rgba(250, 92, 92, 0.1);
+  color: #fa5c5c;
+}
+
+.devto {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.medium {
+  background-color: rgba(0, 171, 108, 0.1);
+  color: #00ab6c;
+}
+
+.dailydev {
+  background-color: rgba(119, 37, 134, 0.1);
+  color: #bc4adc;
+}
+
+.unity-learn {
+  background-color: rgba(0, 180, 255, 0.1);
+  color: #00b4ff;
+}
+
+/* Special tweak for itch.io icon size */
+.itch .social-icon {
+  font-size: 30px;
+}
+
+/* Footer text */
+.extra-space-fill {
+  text-align: center;
+  margin-top: auto;
+}
+
+.extra-text {
+  font-family: 'Press Start 2P', monospace, system-ui;
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  opacity: 0.8;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}

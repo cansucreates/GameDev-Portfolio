@@ -1,0 +1,175 @@
+.about-section {
+  background-color: #1e293b;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #5ee7df, #66d36e);
+  z-index: 1;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #5ee7df, #66d36e);
+}
+
+.avatar-container {
+  width: 200px;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.pixel-character {
+  width: 160px;
+  height: 200px;
+  position: relative;
+  margin-bottom: 10px;
+  /* This would be replaced with an actual pixel art character image */
+ /*   background-color: #4338ca;
+ box-shadow: 0 0 15px rgba(67, 56, 202, 0.5); */
+}
+
+.pixel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  display: block;
+}
+
+
+.avatar-platform {
+  width: 180px;
+  height: 20px;
+  background-color: #334155;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
+
+.avatar-platform::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 15px;
+  right: 15px;
+  height: 2px;
+  background-color: #94a3b8;
+}
+
+.dialogue-box {
+  background-color: rgba(30, 41, 59, 0.8);
+  border: 2px solid #334155;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dialogue-box::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #334155;
+}
+
+.active-dialogue {
+  animation: dialogueFade 0.3s ease-in-out;
+}
+
+@keyframes dialogueFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.skill-card {
+  background-color: #334155;
+  border-radius: 4px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.skill-card:hover, .skill-card.active {
+  transform: translateY(-5px);
+  border-color: #4ade80;
+}
+
+.skill-card .icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(74, 222, 128, 0.2);
+  border-radius: 50%;
+  margin: 0 auto;
+  color: #4ade80;
+}
+
+.skill-card .arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .arrow-icon, .skill-card.active .arrow-icon {
+  transform: translateX(3px);
+}
+
+.skill-bar {
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #334155;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(to right, #5ee7df, #66d36e);
+  position: relative;
+  transition: width 1s ease-in-out;
+}
+
+.progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
