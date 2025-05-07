@@ -7,11 +7,11 @@ const AboutSection: React.FC = () => {
   const [activeDialogue, setActiveDialogue] = useState<string | null>(null);
   
   const skills = [
-    { name: 'Unity', level: 90 },
-    { name: 'C#', level: 85 },
-    { name: 'Game Design', level: 80 },
-    { name: 'Aseprite', level: 75 },
-    { name: 'Blender', level: 70 },
+    { name: 'Unity', level: 70 },
+    { name: 'C#', level: 70 },
+    { name: 'Game Design', level: 70 },
+    { name: 'Aseprite', level: 50 },
+    { name: 'Blender', level: 50 },
     { name: 'Git + GitHub', level: 100 },
   ];
 
